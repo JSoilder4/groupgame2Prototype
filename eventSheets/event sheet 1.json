@@ -15,44 +15,221 @@
 			],
 			"actions": [
 				{
-					"id": "set-enabled",
-					"objectClass": "Sprite",
-					"sid": 964926672124120,
-					"behaviorType": "Physics",
-					"parameters": {
-						"mode": "enabled"
-					}
-				},
-				{
-					"id": "apply-force",
-					"objectClass": "Sprite",
-					"sid": 745087127329489,
-					"behaviorType": "Physics",
-					"parameters": {
-						"force-x": "1000",
-						"force-y": "0",
-						"image-point": "0"
-					}
-				},
-				{
 					"id": "wait",
 					"objectClass": "System",
 					"sid": 980823923797877,
+					"disabled": true,
 					"parameters": {
 						"seconds": "1.0"
 					}
-				},
-				{
-					"id": "set-enabled",
-					"objectClass": "Sprite",
-					"sid": 184113419564599,
-					"behaviorType": "Physics",
-					"parameters": {
-						"mode": "disabled"
-					}
 				}
 			],
-			"sid": 624665826703801
+			"sid": 624665826703801,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Sprite",
+							"sid": 481178751779503,
+							"parameters": {
+								"instance-variable": "right"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "Sprite",
+							"sid": 531881002359690,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "Sprite.Platform.MaxSpeed * Sprite.speedMulti"
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Sprite",
+							"sid": 461299903996595,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "0"
+							}
+						},
+						{
+							"id": "set-gravity",
+							"objectClass": "Sprite",
+							"sid": 903560320130569,
+							"disabled": true,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "0"
+							}
+						},
+						{
+							"id": "set-deceleration",
+							"objectClass": "Sprite",
+							"sid": 537345028220790,
+							"behaviorType": "Platform",
+							"parameters": {
+								"deceleration": "0"
+							}
+						},
+						{
+							"id": "set-vector-x",
+							"objectClass": "Sprite",
+							"sid": 853996924622490,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-x": "Sprite.dashSpeed"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 600306310279749,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "set-max-speed",
+							"objectClass": "Sprite",
+							"sid": 619485749060440,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "Sprite.Platform.MaxSpeed / Sprite.speedMulti"
+							}
+						},
+						{
+							"id": "set-gravity",
+							"objectClass": "Sprite",
+							"sid": 564451941383209,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "Sprite.normGrav"
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Sprite",
+							"sid": 266931860535366,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "1000"
+							}
+						},
+						{
+							"id": "set-deceleration",
+							"objectClass": "Sprite",
+							"sid": 727092993762514,
+							"behaviorType": "Platform",
+							"parameters": {
+								"deceleration": "Sprite.normGrav"
+							}
+						}
+					],
+					"sid": 782179427258962
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Sprite",
+							"sid": 826605436090417,
+							"parameters": {
+								"instance-variable": "right"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "Sprite",
+							"sid": 790264245931132,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "Sprite.Platform.MaxSpeed * Sprite.speedMulti"
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Sprite",
+							"sid": 139647236888546,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "0"
+							}
+						},
+						{
+							"id": "set-deceleration",
+							"objectClass": "Sprite",
+							"sid": 380619929639135,
+							"behaviorType": "Platform",
+							"parameters": {
+								"deceleration": "0"
+							}
+						},
+						{
+							"id": "set-vector-x",
+							"objectClass": "Sprite",
+							"sid": 429467474479682,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-x": "-Sprite.dashSpeed"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 857100288268452,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "set-max-speed",
+							"objectClass": "Sprite",
+							"sid": 245531178266520,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "Sprite.Platform.MaxSpeed / Sprite.speedMulti"
+							}
+						},
+						{
+							"id": "set-gravity",
+							"objectClass": "Sprite",
+							"sid": 580250017357384,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "Sprite.normGrav"
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Sprite",
+							"sid": 180643337540906,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-fall-speed": "1000"
+							}
+						},
+						{
+							"id": "set-deceleration",
+							"objectClass": "Sprite",
+							"sid": 158930632857611,
+							"behaviorType": "Platform",
+							"parameters": {
+								"deceleration": "Sprite.normGrav"
+							}
+						}
+					],
+					"sid": 664932061251953
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -74,6 +251,14 @@
 					"parameters": {
 						"instance-variable": "right",
 						"value": "true"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "Sprite",
+					"sid": 134009812968154,
+					"parameters": {
+						"state": "not-mirrored"
 					}
 				}
 			],
@@ -99,6 +284,14 @@
 					"parameters": {
 						"instance-variable": "right",
 						"value": "false"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "Sprite",
+					"sid": 526568527960624,
+					"parameters": {
+						"state": "mirrored"
 					}
 				}
 			],

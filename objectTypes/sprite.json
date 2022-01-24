@@ -9,6 +9,24 @@
 			"type": "boolean",
 			"desc": "",
 			"sid": 344924659884609
+		},
+		{
+			"name": "normGrav",
+			"type": "number",
+			"desc": "",
+			"sid": 936737144873672
+		},
+		{
+			"name": "speedMulti",
+			"type": "number",
+			"desc": "",
+			"sid": 996292610973383
+		},
+		{
+			"name": "dashSpeed",
+			"type": "number",
+			"desc": "",
+			"sid": 799690342736617
 		}
 	],
 	"behaviorTypes": [
@@ -18,9 +36,9 @@
 			"sid": 623967399576593
 		},
 		{
-			"behaviorId": "Physics",
-			"name": "Physics",
-			"sid": 216606840982571
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 679992997725271
 		}
 	],
 	"effectTypes": [],
@@ -36,7 +54,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3192026,
+						"imageSpriteId": 741707,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
