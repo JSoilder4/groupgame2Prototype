@@ -1,0 +1,109 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 347237350859334,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Sprite",
+					"sid": 964926672124120,
+					"behaviorType": "Physics",
+					"parameters": {
+						"mode": "enabled"
+					}
+				},
+				{
+					"id": "apply-force",
+					"objectClass": "Sprite",
+					"sid": 745087127329489,
+					"behaviorType": "Physics",
+					"parameters": {
+						"force-x": "1000",
+						"force-y": "0",
+						"image-point": "0"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 980823923797877,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Sprite",
+					"sid": 184113419564599,
+					"behaviorType": "Physics",
+					"parameters": {
+						"mode": "disabled"
+					}
+				}
+			],
+			"sid": 624665826703801
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 131576495060296,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Sprite",
+					"sid": 648496530772605,
+					"parameters": {
+						"instance-variable": "right",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 810670159122391
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 114935265912104,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Sprite",
+					"sid": 544695267295501,
+					"parameters": {
+						"instance-variable": "right",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 116427955604022
+		}
+	],
+	"sid": 646054906159908
+}
