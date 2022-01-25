@@ -36,45 +36,21 @@
 							"parameters": {
 								"instance-variable": "right"
 							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Sprite",
+							"sid": 387330419161431,
+							"parameters": {
+								"instance-variable": "isDashing"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
 						{
-							"id": "set-max-speed",
-							"objectClass": "Sprite",
-							"sid": 531881002359690,
-							"behaviorType": "Platform",
-							"parameters": {
-								"max-speed": "Sprite.Platform.MaxSpeed * Sprite.speedMulti"
-							}
-						},
-						{
-							"id": "set-max-fall-speed",
-							"objectClass": "Sprite",
-							"sid": 461299903996595,
-							"behaviorType": "Platform",
-							"parameters": {
-								"max-fall-speed": "0"
-							}
-						},
-						{
-							"id": "set-gravity",
-							"objectClass": "Sprite",
-							"sid": 903560320130569,
-							"disabled": true,
-							"behaviorType": "Platform",
-							"parameters": {
-								"gravity": "0"
-							}
-						},
-						{
-							"id": "set-deceleration",
-							"objectClass": "Sprite",
-							"sid": 537345028220790,
-							"behaviorType": "Platform",
-							"parameters": {
-								"deceleration": "0"
-							}
+							"callFunction": "toDashing",
+							"sid": 271125136281053
 						},
 						{
 							"id": "set-vector-x",
@@ -94,40 +70,8 @@
 							}
 						},
 						{
-							"id": "set-max-speed",
-							"objectClass": "Sprite",
-							"sid": 619485749060440,
-							"behaviorType": "Platform",
-							"parameters": {
-								"max-speed": "Sprite.Platform.MaxSpeed / Sprite.speedMulti"
-							}
-						},
-						{
-							"id": "set-gravity",
-							"objectClass": "Sprite",
-							"sid": 564451941383209,
-							"behaviorType": "Platform",
-							"parameters": {
-								"gravity": "Sprite.normGrav"
-							}
-						},
-						{
-							"id": "set-max-fall-speed",
-							"objectClass": "Sprite",
-							"sid": 266931860535366,
-							"behaviorType": "Platform",
-							"parameters": {
-								"max-fall-speed": "1000"
-							}
-						},
-						{
-							"id": "set-deceleration",
-							"objectClass": "Sprite",
-							"sid": 727092993762514,
-							"behaviorType": "Platform",
-							"parameters": {
-								"deceleration": "Sprite.normGrav"
-							}
+							"callFunction": "toNormal",
+							"sid": 496041237153380
 						}
 					],
 					"sid": 782179427258962
@@ -135,6 +79,15 @@
 				{
 					"eventType": "block",
 					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Sprite",
+							"sid": 294050676292460,
+							"parameters": {
+								"instance-variable": "isDashing"
+							},
+							"isInverted": true
+						},
 						{
 							"id": "is-boolean-instance-variable-set",
 							"objectClass": "Sprite",
@@ -147,31 +100,8 @@
 					],
 					"actions": [
 						{
-							"id": "set-max-speed",
-							"objectClass": "Sprite",
-							"sid": 790264245931132,
-							"behaviorType": "Platform",
-							"parameters": {
-								"max-speed": "Sprite.Platform.MaxSpeed * Sprite.speedMulti"
-							}
-						},
-						{
-							"id": "set-max-fall-speed",
-							"objectClass": "Sprite",
-							"sid": 139647236888546,
-							"behaviorType": "Platform",
-							"parameters": {
-								"max-fall-speed": "0"
-							}
-						},
-						{
-							"id": "set-deceleration",
-							"objectClass": "Sprite",
-							"sid": 380619929639135,
-							"behaviorType": "Platform",
-							"parameters": {
-								"deceleration": "0"
-							}
+							"callFunction": "toDashing",
+							"sid": 720320793152739
 						},
 						{
 							"id": "set-vector-x",
@@ -191,40 +121,8 @@
 							}
 						},
 						{
-							"id": "set-max-speed",
-							"objectClass": "Sprite",
-							"sid": 245531178266520,
-							"behaviorType": "Platform",
-							"parameters": {
-								"max-speed": "Sprite.Platform.MaxSpeed / Sprite.speedMulti"
-							}
-						},
-						{
-							"id": "set-gravity",
-							"objectClass": "Sprite",
-							"sid": 580250017357384,
-							"behaviorType": "Platform",
-							"parameters": {
-								"gravity": "Sprite.normGrav"
-							}
-						},
-						{
-							"id": "set-max-fall-speed",
-							"objectClass": "Sprite",
-							"sid": 180643337540906,
-							"behaviorType": "Platform",
-							"parameters": {
-								"max-fall-speed": "1000"
-							}
-						},
-						{
-							"id": "set-deceleration",
-							"objectClass": "Sprite",
-							"sid": 158930632857611,
-							"behaviorType": "Platform",
-							"parameters": {
-								"deceleration": "Sprite.normGrav"
-							}
+							"callFunction": "toNormal",
+							"sid": 722880643827717
 						}
 					],
 					"sid": 664932061251953
@@ -296,6 +194,152 @@
 				}
 			],
 			"sid": 116427955604022
+		},
+		{
+			"functionName": "toDashing",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 867714475811299,
+					"parameters": {
+						"audio-file": "zooom",
+						"loop": "not-looping",
+						"volume": "-10",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Sprite",
+					"sid": 424383050726712,
+					"parameters": {
+						"instance-variable": "isDashing",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "Sprite",
+					"sid": 177069558604240,
+					"behaviorType": "Platform",
+					"parameters": {
+						"max-speed": "Sprite.Platform.MaxSpeed * Sprite.speedMulti"
+					}
+				},
+				{
+					"id": "set-max-fall-speed",
+					"objectClass": "Sprite",
+					"sid": 368311185058741,
+					"behaviorType": "Platform",
+					"parameters": {
+						"max-fall-speed": "0"
+					}
+				},
+				{
+					"id": "set-gravity",
+					"objectClass": "Sprite",
+					"sid": 449564563320717,
+					"disabled": true,
+					"behaviorType": "Platform",
+					"parameters": {
+						"gravity": "0"
+					}
+				},
+				{
+					"id": "set-deceleration",
+					"objectClass": "Sprite",
+					"sid": 891227390365310,
+					"behaviorType": "Platform",
+					"parameters": {
+						"deceleration": "0"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Sprite",
+					"sid": 784734444628102,
+					"parameters": {
+						"animation": "\"Animation 2\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 297874436457060
+		},
+		{
+			"functionName": "toNormal",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-max-speed",
+					"objectClass": "Sprite",
+					"sid": 159297963096944,
+					"behaviorType": "Platform",
+					"parameters": {
+						"max-speed": "Sprite.Platform.MaxSpeed / Sprite.speedMulti"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Sprite",
+					"sid": 949518649467635,
+					"parameters": {
+						"instance-variable": "isDashing",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-gravity",
+					"objectClass": "Sprite",
+					"sid": 701277380195710,
+					"behaviorType": "Platform",
+					"parameters": {
+						"gravity": "Sprite.normGrav"
+					}
+				},
+				{
+					"id": "set-max-fall-speed",
+					"objectClass": "Sprite",
+					"sid": 943359332829281,
+					"behaviorType": "Platform",
+					"parameters": {
+						"max-fall-speed": "1000"
+					}
+				},
+				{
+					"id": "set-deceleration",
+					"objectClass": "Sprite",
+					"sid": 679649511771114,
+					"behaviorType": "Platform",
+					"parameters": {
+						"deceleration": "Sprite.normGrav"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Sprite",
+					"sid": 786217209329976,
+					"parameters": {
+						"animation": "\"Animation 1\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 624184511116052
 		}
 	],
 	"sid": 646054906159908
