@@ -294,15 +294,6 @@
 					}
 				},
 				{
-					"id": "set-boolean-instvar",
-					"objectClass": "Sprite",
-					"sid": 949518649467635,
-					"parameters": {
-						"instance-variable": "isDashing",
-						"value": "false"
-					}
-				},
-				{
 					"id": "set-gravity",
 					"objectClass": "Sprite",
 					"sid": 701277380195710,
@@ -336,6 +327,23 @@
 					"parameters": {
 						"animation": "\"Animation 1\"",
 						"from": "beginning"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 978627963451465,
+					"parameters": {
+						"seconds": "0.15"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Sprite",
+					"sid": 456171039314772,
+					"parameters": {
+						"instance-variable": "isDashing",
+						"value": "false"
 					}
 				}
 			],
