@@ -2,6 +2,37 @@
 	"name": "Event sheet 1",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "Timer",
+			"type": "number",
+			"initialValue": "60",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 478073542894384
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 145827315839311
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 801256296685839,
+					"parameters": {
+						"scale": "0.75"
+					}
+				}
+			],
+			"sid": 753334905035414
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -133,9 +164,9 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-key-pressed",
+					"id": "key-is-down",
 					"objectClass": "Keyboard",
-					"sid": 131576495060296,
+					"sid": 115469574408214,
 					"parameters": {
 						"key": 39
 					}
@@ -166,9 +197,9 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-key-pressed",
+					"id": "key-is-down",
 					"objectClass": "Keyboard",
-					"sid": 114935265912104,
+					"sid": 341665420600391,
 					"parameters": {
 						"key": 37
 					}
@@ -348,6 +379,395 @@
 				}
 			],
 			"sid": 624184511116052
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 342631595184686,
+					"parameters": {
+						"key": 87
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Sprite",
+					"sid": 175579760986175,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "jump"
+					}
+				}
+			],
+			"sid": 951750607418233,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 724408625531047,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Sprite",
+					"sid": 475767098559691,
+					"parameters": {
+						"instance-variable": "right",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "Sprite",
+					"sid": 766470058132873,
+					"parameters": {
+						"state": "mirrored"
+					}
+				},
+				{
+					"id": "simulate-control",
+					"objectClass": "Sprite",
+					"sid": 938584893486525,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 716328607169423
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 258402832698325,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [],
+			"sid": 621133817154544
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 771940442218027,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Sprite",
+					"sid": 157422668701048,
+					"parameters": {
+						"instance-variable": "right",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "Sprite",
+					"sid": 822217203015496,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				},
+				{
+					"id": "simulate-control",
+					"objectClass": "Sprite",
+					"sid": 647183024960148,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 425836032823754
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 208038515889013,
+					"parameters": {
+						"key": 82
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 473975903929196
+				}
+			],
+			"sid": 195895652196334
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Sprite",
+					"sid": 784209933535014,
+					"parameters": {
+						"object": "Sprite3"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 165461593636054,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Sprite",
+							"sid": 443986874739365,
+							"parameters": {
+								"instance-variable": "isDashing"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Sprite",
+							"sid": 801961152366033
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 868019120155671,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 427823906169282
+						}
+					],
+					"sid": 648360535708584
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Sprite",
+							"sid": 347403105069679,
+							"parameters": {
+								"instance-variable": "isDashing"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 978503697032148,
+							"parameters": {
+								"variable": "Timer",
+								"value": "2.5"
+							}
+						},
+						{
+							"callFunction": "toNormal",
+							"sid": 777902247924495,
+							"disabled": true
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Sprite3",
+							"sid": 428456913193363
+						}
+					],
+					"sid": 597772654672164
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 589234702481710
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 517594701948659,
+					"parameters": {
+						"variable": "Timer",
+						"value": "dt"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Text",
+					"sid": 380987021609481,
+					"parameters": {
+						"text": "\"Time: \" & Timer"
+					}
+				}
+			],
+			"sid": 282199975395720
+		},
+		{
+			"eventType": "variable",
+			"name": "floorTime",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 582881961839270
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Coyote Jump",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "grace",
+					"type": "number",
+					"initialValue": "0.15",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 424606723544780
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 898018247583438,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [],
+					"sid": 248119002146894,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-falling",
+									"objectClass": "Sprite",
+									"sid": 177486162916959,
+									"behaviorType": "Platform"
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 496559566889700,
+									"parameters": {
+										"variable": "floorTime",
+										"comparison": 5,
+										"value": "(time - grace)"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-vector-y",
+									"objectClass": "Sprite",
+									"sid": 243733302366234,
+									"behaviorType": "Platform",
+									"parameters": {
+										"vector-y": "-Sprite.Platform.JumpStrength"
+									}
+								}
+							],
+							"sid": 663780234564882
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-on-floor",
+									"objectClass": "Sprite",
+									"sid": 211132830757085,
+									"behaviorType": "Platform"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-vector-y",
+									"objectClass": "Sprite",
+									"sid": 187377649969729,
+									"behaviorType": "Platform",
+									"parameters": {
+										"vector-y": "-Sprite.Platform.JumpStrength"
+									}
+								}
+							],
+							"sid": 308361165585379
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-floor",
+							"objectClass": "Sprite",
+							"sid": 112224515750241,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 295051619789549,
+							"parameters": {
+								"variable": "floorTime",
+								"value": "time"
+							}
+						}
+					],
+					"sid": 737951749909293
+				}
+			],
+			"sid": 167142924392146
 		}
 	],
 	"sid": 646054906159908

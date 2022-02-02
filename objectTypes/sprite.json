@@ -47,7 +47,12 @@
 			"sid": 679992997725271
 		}
 	],
-	"effectTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "blurhorizontal",
+			"name": "BlurHorizontal"
+		}
+	],
 	"animations": {
 		"items": [
 			{

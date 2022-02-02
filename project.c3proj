@@ -31,6 +31,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Platform",
 			"name": "Platform",
@@ -61,6 +69,22 @@
 			"author": "Scirra",
 			"version": "r276.2",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "blurhorizontal",
+			"name": "Blur horizontal",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
 		}
 	],
 	"uniqueId": "hr81rqu4756",
@@ -69,7 +93,9 @@
 			"Sprite",
 			"Sprite2",
 			"Keyboard",
-			"Audio"
+			"Audio",
+			"Sprite3",
+			"Text"
 		],
 		"subfolders": []
 	},
